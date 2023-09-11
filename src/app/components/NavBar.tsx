@@ -12,7 +12,7 @@ export default function NavBar() {
                     <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/">
                        Home 
                     </Link>
-                    <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="">
+                    <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/main">
                         Profile
                     </Link>
                     <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/main">
