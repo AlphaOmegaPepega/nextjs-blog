@@ -12,8 +12,11 @@ export default function NavBar() {
                     <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/">
                        Home 
                     </Link>
-                    <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="https://steamcommunity.com/profiles/76561198081405420/">
+                    <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="">
                         Profile
+                    </Link>
+                    <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/main">
+                        Main
                     </Link>
                     <Link className="border-r-2 p-2 text-white/80 hover:text-white hover:border-r-blue-400" href="/main/skillLevel">
                         Your Skill
