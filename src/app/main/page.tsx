@@ -15,7 +15,7 @@ const [ids,setIds]=useState('')
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
-
+let name="User"
 const currentDate = `${day}-${month}-${year}`;
 useEffect(()=>{
   
@@ -32,6 +32,11 @@ const getData=async()=>{
 
 }
 getData()
+
+console.log(name)
+if (name){
+  name="User"
+}
 },[status])
 
 
@@ -55,7 +60,7 @@ const handleStart=()=>{
   return (
     <main>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-16'> Welcome,</h1>
-      <h1 className='text-white text-7xl w-2/5 mx-10 mt-2'>{session?.user?.name}</h1>
+      <h1 className='text-white text-7xl w-2/5 mx-10 mt-2'>{name}</h1>
      
       <section className='relative top-1 bg-white  mx-16 mt-24 w-1/6  p-8 rounded-lg'> 
       <img src='/img/target.png' className='p-1 my-3.5'/>
