@@ -19,6 +19,26 @@ export const titlesCom=[
 
 
 ]
+export const titles1=[
+    'Working with a team',
+    'Communication and articulation',
+    'Quality of work and reliability',
+    'Decision making',
+    'Continuous learning',
+    'Organisational skills',
+    'Bias to Action',
+    'User Research',
+    'Design thinking',
+    'Market Research',
+    'Synthesising findings',
+    'Product thinking',
+    'Visual Design',
+    'UX & Interaction design',
+    'UX testing',
+    
+
+
+]
 export const titles2=[
     'Business Process Management',
     'Product Development',

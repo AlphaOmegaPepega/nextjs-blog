@@ -1,7 +1,7 @@
 'use client'
 import React, { Suspense, useEffect,useRef,useState } from 'react'
 import { questions } from '@/lib/servey'
-import "./style.css"
+
 import { useRouter } from 'next/navigation'
 import { useSession } from "next-auth/react"
 import getAllUsers from '@/lib/getAllUsers'
@@ -18,14 +18,12 @@ import fillSurvey from '@/lib/fillSurvery'
 export default function Survey({params:{survey}}) {
   const {data: session, status}=useSession()
   
-  const value=useRef([])
+  
   const router = useRouter()
-let fill
 
 
 
 
-  const [ids,setIDs]=useState('')
   const [color,setColor]=useState([])
  
 
@@ -41,10 +39,11 @@ useEffect(()=>{
   if(status=='authenticated'){
     const getData=async ()=>{
       user=await getAllUsers(session.user.email)
-      setIDs(user._id)
+     
       let surv=await fillSurvey(survey,user._id)
     
       setColor(surv)
+      
       
     
      
@@ -66,46 +65,13 @@ useEffect(()=>{
 
 
 
-const handleChange=(e)=>{
- if(e.target.id.length==2){
-  const questionIndex = e.target.id[0]-1;
-  
-  value.current[questionIndex] = e.target.value;
-  
- }
- if(e.target.id.length==3){
-  const questionIndex = (e.target.id[0]+e.target.id[1])-1;
-  value.current[questionIndex] = e.target.value;
-  
- }
- console.log(value.current)
- 
- 
- }
+
 
  
 
 
 const handleSurvey=()=>{
-
-let score=value.current.reduce((a,b)=>{return parseInt(a)+parseInt(b)})
-console.log(score)
-
-let finalscore=Math.round(score*100/(content.length*5))
-
-console.log(finalscore)
-console.log(value)
-
-postQuestion(ids,survey,finalscore,value.current)
-if(value.current.length==content.length && parseInt(survey)<27){
-router.push(`/survey/${parseInt(survey)+1}`)
-}else if(parseInt(survey)==27){
-  router.push(`/main`)
-  alert('Thanks for finishing servey, now you can check results in my skill tab')
-}else
-{
-  alert('You need to answer all questions')
-}
+    router.push(`/main/surveyFilled//${parseInt(survey)+1}`)
 }
 
 
@@ -122,7 +88,7 @@ router.push(`/survey/${parseInt(survey)+1}`)
     {content.map(question=>{
        
         id=parseInt(id)+1
-      
+       
         return (
             <label key={newID+id} className="container"><p key={newID+id+'3'} className='ml-5 '>{question}</p>
          <br/>
@@ -131,15 +97,16 @@ router.push(`/survey/${parseInt(survey)+1}`)
       <RadioGroup
       row
         aria-labelledby="demo-radio-buttons-group-label"
-       
+        value={color.length? color[id-1] : '3'}
         name="radio-buttons-group"
+        
        
       >
-        <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
-        <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'6'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
-        <FormControlLabel className='ml-8 p-6'  value="3" control={<Radio onChange={handleChange} id={id+'7'}className={color[id-1]==3? "text-sky-600" :""}  />} label="Neutral" />
-        <FormControlLabel  className='ml-8 p-6' value="4" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
-        <FormControlLabel className='ml-8 p-6'  value="5" control={<Radio onChange={handleChange} id={id+'9'} className={color[id-1]==5? "text-sky-600" :""}  />} label="Strongly Agree" />
+        <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio   id={id+'5'} />} label="Strongly Disagree" />
+        <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio  id={id+'6'} />} label="Disagree" />
+        <FormControlLabel className='ml-8 p-6'  value="3" control={<Radio  id={id+'7'} />} label="Neutral" />
+        <FormControlLabel  className='ml-8 p-6' value="4" control={<Radio  id={id+'8'}  />} label="Agree" />
+        <FormControlLabel className='ml-8 p-6'  value="5" control={<Radio  id={id+'9'} />} label="Strongly Agree" />
       </RadioGroup>
     </FormControl>
     <hr className='border-4'/>

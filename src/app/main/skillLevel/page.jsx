@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react"
 import jsPDF from 'jspdf';
 import getPersonal from '@/lib/getQuestions'
 import getAllUsers from '@/lib/getAllUsers'
-import { titles2, titlesCom } from '@/lib/titles'
+import { titles1, titles2} from '@/lib/titles'
 import getDelivery from '@/lib/getDelivery'
 import getDesign from '@/lib/getDesgin'
 import getDiscovery from '@/lib/getDiscovery'
@@ -48,7 +48,6 @@ const [page,SetPage]=useState(true)
       const industry=await industryData[industryData.length-1]      
       const stack=await StackhData[StackhData.length-1];
       const vision=await VisionData[VisionData.length-1];
-      console.log(dataWorking)
       const promises = [
         ...Object.values(dataWorking),
         ...Object.values(deliv),
@@ -96,7 +95,7 @@ const chartData2=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,
       
       
         if(page){
-        createChart('bar',titlesCom,chartData1,chartColors1,'acquisitions')
+        createChart('bar',titles1,chartData1,chartColors1,'acquisitions')
         createChart('bar',titles2,chartData2,chartColors2,'acquisitions2')  
 
 
@@ -120,9 +119,9 @@ const chartData2=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,
 {page && <div>
   <h1>Your skill</h1>
 <h3>HELLO BLA BLA BLA</h3>
-<div>
+
   <canvas  className='relative bg-white top-10 w-full' id="acquisitions" ></canvas>
-  </div>
+  
 <canvas className='relative bg-white top-10 w-full' id="acquisitions2" ></canvas>
 
 

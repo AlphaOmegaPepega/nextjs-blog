@@ -11,7 +11,8 @@ new Chart(
             label: 'Score',
             data: data,
             backgroundColor:colors,
-            borderRadius:40                           
+            borderRadius:40,
+                           
           }
         ],
         
