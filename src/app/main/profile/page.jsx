@@ -2,7 +2,7 @@
 import React from 'react'
 import { useSession } from "next-auth/react"
 import Avatar from '@mui/material/Avatar';
-export default function page() {
+export default function Profile() {
   const {data: session, status}=useSession()
   
   return (
