@@ -1,5 +1,5 @@
 import Chart from 'chart.js/auto'
-export default async function createChart(type,labels,data,colors,id){
+export default async function createChart(type,labels,data,colors,id,index){
 new Chart(
     document.getElementById(id),
     {
@@ -21,7 +21,7 @@ new Chart(
       options: {
         
         responsive:true,
-        indexAxis: 'y',
+        indexAxis:index,
         
         scales: {
           

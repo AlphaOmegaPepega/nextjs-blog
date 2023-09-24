@@ -95,8 +95,8 @@ const chartData2=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,
       
       
         if(page){
-        createChart('bar',titles1,chartData1,chartColors1,'acquisitions')
-        createChart('bar',titles2,chartData2,chartColors2,'acquisitions2')  
+        createChart('bar',titles1,chartData1,chartColors1,'acquisitions','y')
+        createChart('bar',titles2,chartData2,chartColors2,'acquisitions2','y')  
 
 
     }

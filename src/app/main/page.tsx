@@ -6,16 +6,17 @@ import Link from 'next/link'
 import getAllUsers from '@/lib/getAllUsers'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Main() {
-  
+  const router = useRouter();
   const date = new Date();
   const {data: session, status}=useSession()
 const [ids,setIds]=useState('')
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
-let name="User"
+const [name,setName]=useState('User')
 const currentDate = `${day}-${month}-${year}`;
 useEffect(()=>{
   
@@ -25,18 +26,25 @@ const getData=async()=>{
   
 
   const userData=await getAllUsers(session?.user?.email as string)
-  
-  setIds(userData._id)
+  if(!userData){
+    axios.post(`http://localhost:3500/users`,{
+      email:session?.user?.email,
+      date:currentDate
+    })
+    router.push('/main/profile')
+  }else{
+  setIds(userData._id)}
 }
 
 
 }
 getData()
 
-console.log(name)
-if (name){
-  name="User"
+
+if(session?.user?.name){
+  setName(session?.user?.name)
 }
+
 },[status])
 
 
@@ -45,8 +53,12 @@ if (name){
 
 
 
-const handleStart=()=>{
+const handleStart=async ()=>{
   
+  if(!ids){
+    const userData=await getAllUsers(session?.user?.email as string)
+    setIds(userData._id)
+  }
   const endpoints = ['communication', 'Delivery', 'Design', 'Disscovery', 'IndustryKnwlg', 'Stakeholder', 'Vision'];
   const postData = async (endpoint:string) => {
     return axios.post(`http://localhost:3500/${endpoint}`,{
@@ -61,45 +73,54 @@ const handleStart=()=>{
     <main>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-16'> Welcome,</h1>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-2'>{name}</h1>
-     
-      <section className='relative top-1 bg-white  mx-16 mt-24 w-1/6  p-8 rounded-lg'> 
-      <img src='/img/target.png' className='p-1 my-3.5'/>
-    <h2 className='text-2xl text-left my-5 font-bold '>Test your skill level as 
+     <section className='grid grid-cols-3 gap-2 w-9/12 relative mt-2% left-2%'>
+      <section id='1'>
+
+      <section className=' bg-white p-7.5% rounded-3xl w-10/12 ml-1% mt-8.2% row-span-3 space-y-18.35%'> 
+      <img src='/img/target.png' className='p-1 my-4.2% scale-110'/>
+    <h2 className='text-3xl text-left font-bold '>Test your skill level as 
 a Product Manager</h2>
-    <p className='mt-14 text-lg'>Fill this test now and as often 
+    <p className='mt-17% text-2xl pb-2%'>Fill this test now and as often 
 as you see fit and see the 
 changes in time</p>
-    <p className='text-center text-white bg-pink-600 w-2/3 py-5 rounded-full ml-10 mt-14'><Link href='/survey/1' onClick={handleStart}>Start test</Link></p>
+    <p className='text-center text-xl left-12% relative top-1 text-white w-9/12 bg-pink-600 p-5% rounded-full'><Link href='/survey/1' onClick={handleStart}>Start test</Link></p>
       </section>
-     
-      <section className='absolute w-64 bg-white left-96 h-56 top-96 rounded-lg ml-10 mt-3 p-8'> 
-      <img src='/img/plus.png' className='relative ml-16 left-3'/>
+      </section>
+
+     <section id='2' className='relative -left-11%'>
+
+      <section className='bg-white  rounded-3xl p-6.8% row-span-1 mt-8.2% w-8/12 '> 
+      <img src='/img/plus.png' className='relative ml-42% scale-110'/>
       
-      <h2 className='text-3xl my-5 font-bold text-center '>Add Learnings</h2>
-      <p className='relative text-center text-pink-600 font-bold'>View</p>
+      <h2 className='text-3xl my-13% font-bold text-center relative top-1 '>Add Learnings</h2>
+      <p className='relative text-center text-xl  text-pink-600 font-bold mt-20%'><Link href='/main/add'>View</Link></p>
             </section>
 
-      <section className='absolute w-64 bg-white left-96 h-56 bottom-24 rounded-lg ml-10 p-8 '> 
-      <img src='/img/profile.png' className='relative ml-16 left-2'/>
+      <section className=' bg-white  rounded-3xl p-6.8% row-span-1 mt-8.2% w-8/12 '> 
+      <img src='/img/profile.png' className='relative ml-42% scale-110'/>
       
-      <h2 className='text-3xl my-8 font-bold text-center '>Profile</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-12'>View</p>
+      <h2 className='text-3xl my-13% font-bold text-center relative top-1  '>Profile</h2>
+      <p className='relative text-center text-xl  text-pink-600 font-bold mt-20%'><Link href='/main/profile'>View</Link></p>
+      </section>
       </section>
 
-      <section className='absolute w-64 bg-white left-1/3 h-56 top-96 rounded-lg ml-20 mt-3 p-8'> 
-      <img src='/img/plus.png' className='relative ml-16 left-3 mb-8'/>
+      <section id='3' className='relative -left-40%'>
+
+      <section className='bg-white  rounded-3xl p-6.8% row-span-1 mt-8.2% w-8/12 '> 
+      <img src='/img/plus.png' className='relative ml-42% scale-110'/>
       
-      <h2 className='relative text-3xl my-8 font-bold text-center top-2 '>Your skill</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-12'><Link href='/main/skillLevel' >View</Link></p>
+      <h2 className='text-3xl my-13% font-bold text-center relative top-1  '>Your skill</h2>
+      <p className='relative text-center text-xl  text-pink-600 font-bold mt-20%'><Link href='/main/skillLevel' >View</Link></p>
             </section>
 
-      <section className='absolute w-64 bg-white left-1/3 h-56 bottom-24 rounded-lg ml-20 p-8 '> 
-      <img src='/img/profile.png' className='relative ml-16 left-2'/>
+      <section className='bg-white  rounded-3xl p-6.8% row-span-1 mt-8.2% w-8/12 '> 
+      <img src='/img/profile.png' className='relative ml-42% lg:scale-110 md:scale-75 sm:scale-50'/>
       
-      <h2 className='text-3xl my-8 font-bold text-center '>Test history</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-12'><Link href='/main/history' >View</Link></p>
+      <h2 className='text-3xl my-13% font-bold text-center relative top-1  '>Test history</h2>
+      <p className='relative text-center text-xl  text-pink-600 font-bold mt-20%'><Link href='/main/history' >View</Link></p>
       </section>
-     
+      </section>
+      </section>
     </main>
   )
 }
