@@ -91,7 +91,7 @@ const handleSurvey=()=>{
 let score=value.current.reduce((a,b)=>{return parseInt(a)+parseInt(b)})
 console.log(score)
 
-let finalscore=Math.round(score*100/(content.length*5))
+let finalscore=Math.round(score*100/(content.length*4))
 
 console.log(finalscore)
 console.log(value)
@@ -113,8 +113,8 @@ router.push(`/survey/${parseInt(survey)+1}`)
   return (
     <main>
       <Suspense>
-      {parseInt(survey)<17 &&   <h1 className='text-5xl text-white mt-10 text-center'>{titlesCom[parseInt(survey)]}</h1>}
-      {parseInt(survey)>=16 &&   <h1 className='text-5xl text-white m-5 mb-0'>{titles2[parseInt(survey)-16]}</h1>}
+      <h1 className='text-5xl text-white mt-10 text-center'>{titlesCom[parseInt(survey)]}</h1>
+     
       <h2 className='text-3xl text-white m-5 mt-10 mb-0' >{discription[parseInt(survey)]}</h2>
      
     <div className='relative  top-8 bg-white p-12 text-left '>
@@ -137,9 +137,8 @@ router.push(`/survey/${parseInt(survey)+1}`)
       >
         <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
         <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'6'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
-        <FormControlLabel className='ml-8 p-6'  value="3" control={<Radio onChange={handleChange} id={id+'7'}className={color[id-1]==3? "text-sky-600" :""}  />} label="Neutral" />
-        <FormControlLabel  className='ml-8 p-6' value="4" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
-        <FormControlLabel className='ml-8 p-6'  value="5" control={<Radio onChange={handleChange} id={id+'9'} className={color[id-1]==5? "text-sky-600" :""}  />} label="Strongly Agree" />
+        <FormControlLabel  className='ml-8 p-6' value="3" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
+        <FormControlLabel className='ml-8 p-6'  value="4" control={<Radio onChange={handleChange} id={id+'9'} className={color[id-1]==5? "text-sky-600" :""}  />} label="Strongly Agree" />
       </RadioGroup>
     </FormControl>
     <hr className='border-4'/>

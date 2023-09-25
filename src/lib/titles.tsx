@@ -15,9 +15,18 @@ export const titlesCom=[
     'Visual Design',
     'UX & Interaction design',
     'UX testing',
-    
-
-
+    'Business Process Management',
+    'Product Development',
+    'Technology Awareness',
+    'Agile Product Delivery',
+    'Engagement',
+    'Leadership',
+    'Stakeholder Management',
+    'Vision',
+    'Road Mapping',
+    'Strategy',
+    'General Industry knowledge',
+    'Industry specific processes',
 ]
 export const titles1=[
     'Working with a team',
@@ -27,6 +36,11 @@ export const titles1=[
     'Continuous learning',
     'Organisational skills',
     'Bias to Action',
+      
+
+
+]
+export const titles2=[
     'User Research',
     'Design thinking',
     'Market Research',
@@ -35,11 +49,9 @@ export const titles1=[
     'Visual Design',
     'UX & Interaction design',
     'UX testing',
-    
-
-
 ]
-export const titles2=[
+
+export const titles3=[
     'Business Process Management',
     'Product Development',
     'Technology Awareness',
@@ -47,12 +59,17 @@ export const titles2=[
     'Engagement',
     'Leadership',
     'Stakeholder Management',
+]
+
+export const titles4=[
     'Vision',
-    'Strategy',
     'Road Mapping',
+    'Strategy',
     'General Industry knowledge',
     'Industry specific processes',
 ]
+
+
 export const discription =[
     '',
 'The ability to collaborate with others and facilitate collaboration with and between colleagues',

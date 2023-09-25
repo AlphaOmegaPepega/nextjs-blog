@@ -27,7 +27,7 @@ const getData=async()=>{
 
   const userData=await getAllUsers(session?.user?.email as string)
   if(!userData){
-    axios.post(`http://localhost:3500/users`,{
+    axios.post(`https://produktize-api.onrender.com/users`,{
       email:session?.user?.email,
       date:currentDate
     })

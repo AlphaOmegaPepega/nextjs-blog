@@ -12,18 +12,22 @@ new Chart(
             data: data,
             backgroundColor:colors,
             borderRadius:40,
-                           
+       
+            
           }
         ],
         
         
-      },
+      }
+      ,
       options: {
         
         responsive:true,
         indexAxis:index,
-        
+        aspectRation:0.2,
         scales: {
+          
+         
           
         
           x: {

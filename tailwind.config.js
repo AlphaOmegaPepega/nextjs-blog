@@ -16,7 +16,9 @@ module.exports = {
       },
       colors: {
         'produkt': '#6500D3',
-        'produkH':'#7c03ff'
+        'produkH':'#7c03ff',
+        'discovery':'#FF508C',
+        'design':"#6500D3"
       },
       spacing: {
         '1%': '1%',

@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react"
 import jsPDF from 'jspdf';
 import getPersonal from '@/lib/getQuestions'
 import getAllUsers from '@/lib/getAllUsers'
-import { titles1, titles2} from '@/lib/titles'
+import { titles1, titles2, titles3, titles4, titles5, titles6, titles7} from '@/lib/titles'
 import getDelivery from '@/lib/getDelivery'
 import getDesign from '@/lib/getDesgin'
 import getDiscovery from '@/lib/getDiscovery'
@@ -28,9 +28,16 @@ const [page,SetPage]=useState(true)
     if(Chart.getChart("acquisitions")){
       Chart.getChart("acquisitions").destroy()
       }
-      if(Chart.getChart("acquisitions2")){
-        Chart.getChart("acquisitions2").destroy()
-        }
+    if(Chart.getChart("acquisitions2")){
+      Chart.getChart("acquisitions2").destroy()
+      }
+    if(Chart.getChart("acquisitions3")){
+        Chart.getChart("acquisitions3").destroy()
+      }
+    if(Chart.getChart("acquisitions4")){
+        Chart.getChart("acquisitions4").destroy()
+      }
+  
     const creatGraph=async ()=>{
       const user=await getAllUsers(session.user.email)
       const data=await getPersonal(user._id)
@@ -70,33 +77,29 @@ const [page,SetPage]=useState(true)
 // Data for first part of the chart TODO:create env for it      
 const chartData1=[dataWorking.Collaboration,dataWorking.Communication,
 dataWorking.Quality,dataWorking.DecisionMaking,dataWorking.Learning,dataWorking.Organisational,
-dataWorking.Bias,
-discover.UserResearch,discover.Design,discover.Market,discover.Synthesising,
-design.Product,design.Visual,design.UXDesign,design.UXTesting]
+dataWorking.Bias]
+const chartData2=[discover.UserResearch,discover.Design,discover.Market,discover.Synthesising,design.Product,design.Visual,design.UXDesign,design.UXTesting]
 // Colors for first part of the chart 
-const chartColors1=['#49BBFF','#49BBFF','#49BBFF','#49BBFF','#49BBFF','#49BBFF','#49BBFF',
-'#FF508C','#FF508C','#FF508C','#FF508C',
-'#6500D3','#6500D3','#6500D3','#6500D3']
+const chartData3=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,stack.Engagement,stack.Leadership,stack.Management]
+
+const chartData4=[vision.Vision,vision.Strategy,vision.RoadMapping,industry.General,industry.Specific]
 
 // Data for second part of the chart TODO:create env for it
-const chartData2=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,
-  stack.Engagement,stack.Leadership,stack.Management,
-  vision.Vision,vision.Strategy,vision.RoadMapping,
-  industry.General,industry.Specific]
 
 // Colors for seconds part of the chart 
-  const chartColors2=['#F4D801','#F4D801','#F4D801','#F4D801',
-  '#00268B','#00268B','#00268B',
-  '#FFD79A','#FFD79A','#FFD79A',
-  '#E7DCF8','#E7DCF8']
-
+ 
+let colors=['#FF508C','#FF508C','#FF508C','#FF508C',
+            '#6500D3','#6500D3','#6500D3','#6500D3']
      
       
       
       
         if(page){
-        createChart('bar',titles1,chartData1,chartColors1,'acquisitions','y')
-        createChart('bar',titles2,chartData2,chartColors2,'acquisitions2','y')  
+        createChart('bar',titles1,chartData1,'#49BBFF','acquisitions','y')
+        createChart('bar',titles2,chartData2,colors,'acquisitions2','y') 
+        createChart('bar',titles3,chartData3,'#6500D3','acquisitions3','y')  
+        createChart('bar',titles4,chartData4,'#F4D801','acquisitions4','y')
+        
 
 
     }
@@ -119,13 +122,21 @@ const chartData2=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,
 {page && <div>
   <h1>Your skill</h1>
 <h3>HELLO BLA BLA BLA</h3>
-
+<section className=''>
   <canvas  className='relative bg-white top-10 w-full' id="acquisitions" ></canvas>
-  
+  <section className='flex flex-row text-center  p-5 text-3xl relative top-10 pl-40% bg-white'>
+  <h1 className='p-1 text-discovery'>Discovery</h1>
+  <h1 className='p-1'>and</h1>
+  <h1 className='p-1 text-design'>Design</h1>
+  </section>
 <canvas className='relative bg-white top-10 w-full' id="acquisitions2" ></canvas>
+  <canvas  className='relative bg-white top-10 w-full' id="acquisitions3" ></canvas>
+  
+<canvas className='relative bg-white top-10 w-full' id="acquisitions4" ></canvas>
 
 
 
+</section>
 </div>
 
 

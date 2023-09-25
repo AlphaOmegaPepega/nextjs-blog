@@ -20,12 +20,18 @@ export default function Personal() {
     const {data: session, status}=useSession()
     const [select,setSelect]=useState(1)
     const [user,setUser]=useState('')
-   
-    const handleChange=(e)=>{
+    const [expanded, setExpanded] = useState(false);
+    const handleChoice=(e)=>{
         setSelect(e.target.id)
         
       
     }
+
+
+    const handleChange = (panel) => (isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
     useEffect(()=>{
         if(status=='authenticated'){
           let dataChart=[]
@@ -49,7 +55,7 @@ export default function Personal() {
                 
                   console.log(dataChart)
                   console.log(lables)
-                    createChart('bar',lables,dataChart,'#A52A2A',"acquisitions",'x')
+                    createChart('bar',lables,dataChart,'#49BBFF',"acquisitions",'x')
                   
               
                   }
@@ -60,12 +66,12 @@ export default function Personal() {
     },[status,select])
   return (
     <main>
-        <section className='flex'>
-        <section className='bg-white flex-none w-64 relative pt-28' >
+        <section className='flex bg-white p-2%'>
+        <section className='bg-white  flex-none w-64 relative -top-7 py-2%' >
         
 
         
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -74,22 +80,22 @@ export default function Personal() {
           <Typography>PERSONAL</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='1' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Collaboration</p>
-         <Divider />
-         <p id='2' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Communication</p>
-         <Divider/>
-         <p id="3" className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Quality</p>
-         <Divider />
-         <p id="4" className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Decision making</p>
-         <Divider />
-         <p id='5' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Continuous learning</p>
-         <Divider />
-         <p id='6' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Organizational skills</p>
-         <Divider />
-         <p id='7' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Bias to Action</p>
+         <p id='1' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Collaboration</p>
+       
+         <p id='2' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Communication</p>
+        
+         <p id="3" className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Quality</p>
+        
+         <p id="4" className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Decision making</p>
+        
+         <p id='5' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Continuous learning</p>
+         
+         <p id='6' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Organizational skills</p>
+        
+         <p id='7' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Bias to Action</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel2')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -98,13 +104,13 @@ export default function Personal() {
           <Typography>DISCOVERY</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='8' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>User Research</p>
-         <p id='9' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Design thinking</p>
-         <p id='10' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Market Research</p>
-         <p id='11' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Synthesising findings</p>
+         <p id='8' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>User Research</p>
+         <p id='9' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Design thinking</p>
+         <p id='10' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Market Research</p>
+         <p id='11' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Synthesising findings</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel3')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -113,13 +119,13 @@ export default function Personal() {
           <Typography>DESIGN</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='12' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Product thinking</p>
-         <p id='13' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Visual Design</p>
-         <p id='14' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>UX & Interaction design</p>
-         <p id='15' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>UX testing</p>
+         <p id='12' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Product thinking</p>
+         <p id='13' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Visual Design</p>
+         <p id='14' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>UX & Interaction design</p>
+         <p id='15' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>UX testing</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel5')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -128,13 +134,13 @@ export default function Personal() {
           <Typography>DELIVERY</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='16' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Business Process Management</p>
-         <p id='17' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Product Development</p>
-         <p id='18' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Technology Awareness</p>
-         <p id='19' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Agile Product Delivery</p>
+         <p id='16' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Business Process Management</p>
+         <p id='17' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Product Development</p>
+         <p id='18' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Technology Awareness</p>
+         <p id='19' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Agile Product Delivery</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel6')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -143,12 +149,12 @@ export default function Personal() {
           <Typography>STAKEHOLDER MANAGEMENT</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='20' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Engagement</p>
-         <p id='21' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Leadership</p>
-         <p id='22' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Stakeholder Management</p>
+         <p id='20' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Engagement</p>
+         <p id='21' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Leadership</p>
+         <p id='22' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Stakeholder Management</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel7')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -157,12 +163,12 @@ export default function Personal() {
           <Typography>VISION AND STRATEGY</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='23' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Vision</p>
-         <p id='24' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Road Mapping</p>
-         <p id='25' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Strategy</p>
+         <p id='23' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Vision</p>
+         <p id='24' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Road Mapping</p>
+         <p id='25' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Strategy</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion>
+        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel8')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -171,8 +177,8 @@ export default function Personal() {
           <Typography>BUSINESS INDUSTRY KNOWLEDGE</Typography>
         </AccordionSummary>
         <AccordionDetails>
-         <p id='26' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>General Knowledge</p>
-         <p id='27' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChange}>Specific Processes</p>
+         <p id='26' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>General Knowledge</p>
+         <p id='27' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Specific Processes</p>
          
         </AccordionDetails>
       </Accordion>
@@ -180,7 +186,7 @@ export default function Personal() {
 
 
 </section>
-<section className='bg-white flex-1'>
+<section className='bg-white flex-1 ml-1% rounded-2xl'>
     
     <canvas  id="acquisitions" ></canvas></section>
 </section>
