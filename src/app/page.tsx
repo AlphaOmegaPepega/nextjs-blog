@@ -23,7 +23,7 @@ export default  function Home() {
      <p className='text-4xl m-20 w-10/12 text-white'> Welcome to the Productize Product Management Skill map.
       This tool has been used by us for many years in order to track the skill development of ourselves and the many product teams we have led. 
       It will help you describe the skill expectations you have for a specific role or prep for the yearly review. For Product Managers and Leads.</p>
-      {!session && <Link href='/api/auth/signin/google' className=' m-20  text-white text-2xl'>Sign in</Link>}
+      {!session && <p className='mx-20 w-11% text-center text-white text-2xl p-6 bg-pink-600 rounded-full'><Link href='/api/auth/signin/google' >Sign in</Link></p>}
       
     </main>
   

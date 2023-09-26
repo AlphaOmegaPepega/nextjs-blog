@@ -37,6 +37,15 @@ const [page,SetPage]=useState(true)
     if(Chart.getChart("acquisitions4")){
         Chart.getChart("acquisitions4").destroy()
       }
+    if(Chart.getChart("acquisitions5")){
+        Chart.getChart("acquisitions5").destroy()
+      }
+    if(Chart.getChart("acquisitions6")){
+        Chart.getChart("acquisitions6").destroy()
+      }
+    if(Chart.getChart("acquisitions7")){
+        Chart.getChart("acquisitions7").destroy()
+      }
   
     const creatGraph=async ()=>{
       const user=await getAllUsers(session.user.email)
@@ -78,27 +87,34 @@ const [page,SetPage]=useState(true)
 const chartData1=[dataWorking.Collaboration,dataWorking.Communication,
 dataWorking.Quality,dataWorking.DecisionMaking,dataWorking.Learning,dataWorking.Organisational,
 dataWorking.Bias]
-const chartData2=[discover.UserResearch,discover.Design,discover.Market,discover.Synthesising,design.Product,design.Visual,design.UXDesign,design.UXTesting]
+const chartData2=[discover.UserResearch,discover.Design,discover.Market,discover.Synthesising]
 // Colors for first part of the chart 
-const chartData3=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile,stack.Engagement,stack.Leadership,stack.Management]
+const chartData3=[design.Product,design.Visual,design.UXDesign,design.UXTesting]
 
-const chartData4=[vision.Vision,vision.Strategy,vision.RoadMapping,industry.General,industry.Specific]
+const chartData4=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile]
+const chartData5=[stack.Engagement,stack.Leadership,stack.Management]
+
+const chartData6=[vision.Vision,vision.Strategy,vision.RoadMapping]
+const chartData7=[industry.General,industry.Specific]
+
+
 
 // Data for second part of the chart TODO:create env for it
 
 // Colors for seconds part of the chart 
- 
-let colors=['#FF508C','#FF508C','#FF508C','#FF508C',
-            '#6500D3','#6500D3','#6500D3','#6500D3']
+
      
       
       
       
         if(page){
         createChart('bar',titles1,chartData1,'#49BBFF','acquisitions','y')
-        createChart('bar',titles2,chartData2,colors,'acquisitions2','y') 
+        createChart('bar',titles2,chartData2,'#FF508C','acquisitions2','y') 
         createChart('bar',titles3,chartData3,'#6500D3','acquisitions3','y')  
         createChart('bar',titles4,chartData4,'#F4D801','acquisitions4','y')
+        createChart('bar',titles5,chartData5,'#00268B','acquisitions5','y') 
+        createChart('bar',titles6,chartData6,'#FFD79A','acquisitions6','y')  
+        createChart('bar',titles7,chartData7,'#E7DCF8','acquisitions7','y')
         
 
 
@@ -116,23 +132,63 @@ let colors=['#FF508C','#FF508C','#FF508C','#FF508C',
 
 
   return (
-    <main className='cas'>
+    <main>
 
 
 {page && <div>
   <h1>Your skill</h1>
 <h3>HELLO BLA BLA BLA</h3>
-<section className=''>
-  <canvas  className='relative bg-white top-10 w-full' id="acquisitions" ></canvas>
-  <section className='flex flex-row text-center  p-5 text-3xl relative top-10 pl-40% bg-white'>
-  <h1 className='p-1 text-discovery'>Discovery</h1>
-  <h1 className='p-1'>and</h1>
-  <h1 className='p-1 text-design'>Design</h1>
+<section className='h-145'>
+<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>PERSONAL TRAITS</h1>
   </section>
-<canvas className='relative bg-white top-10 w-full' id="acquisitions2" ></canvas>
-  <canvas  className='relative bg-white top-10 w-full' id="acquisitions3" ></canvas>
-  
-<canvas className='relative bg-white top-10 w-full' id="acquisitions4" ></canvas>
+  <section className='text-center  text-3xl   bg-white h-145'> 
+  <canvas  className='relative bg-white top-10  ' id="acquisitions" ></canvas>
+  </section>
+
+  <section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>DISCOVERY AND IDEATION</h1>
+  </section>
+  <section className='text-center  text-3xl   bg-white h-96'> 
+<canvas className='relative bg-white top-10 ' id="acquisitions2" ></canvas>
+</section>
+
+<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>DESIGN</h1>
+  </section>
+  <section className='text-center  text-3xl   bg-white h-96'> 
+  <canvas  className='relative bg-white top-10  ' id="acquisitions3" ></canvas>
+  </section>
+
+  <section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>DELIVERY</h1>
+  </section>
+  <section className='text-center  text-3xl   bg-white h-96'> 
+<canvas className='relative bg-white top-10 ' id="acquisitions4" ></canvas>
+</section>
+
+<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>STAKEHOLDER MANAGEMENT</h1>
+  </section>
+  <section className='text-center  text-3xl   bg-white h-80'> 
+<canvas className='relative bg-white top-10 ' id="acquisitions5" ></canvas>
+</section>
+
+<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>VISION AND STRATEGY</h1>
+  </section>
+  <section className='text-center  text-3xl   bg-white h-80'> 
+
+  <canvas  className='relative bg-white top-10  ' id="acquisitions6" ></canvas>
+ </section>
+
+
+ <section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <h1 className>BUSINESS INDUSTRY KNOWLEDGEY</h1>
+  </section>
+  <section className='text-center  text-3xl  bg-white h-64'> 
+<canvas className='relative bg-white top-10 ' id="acquisitions7" ></canvas>
+</section>
 
 
 

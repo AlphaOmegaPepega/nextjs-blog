@@ -21,7 +21,7 @@ new Chart(
       }
       ,
       options: {
-        
+        maintainAspectRatio:false,
         responsive:true,
         indexAxis:index,
         aspectRation:0.2,

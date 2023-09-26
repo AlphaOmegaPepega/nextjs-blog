@@ -61,7 +61,7 @@ const handleStart=async ()=>{
   }
   const endpoints = ['communication', 'Delivery', 'Design', 'Disscovery', 'IndustryKnwlg', 'Stakeholder', 'Vision'];
   const postData = async (endpoint:string) => {
-    return axios.post(`http://localhost:3500/${endpoint}`,{
+    return axios.post(`https://produktize-api.onrender.com/${endpoint}`,{
       user:ids,
       date:currentDate
     });
@@ -73,14 +73,14 @@ const handleStart=async ()=>{
     <main>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-16'> Welcome,</h1>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-2'>{name}</h1>
-     <section className='grid grid-cols-3 gap-2 w-9/12 relative mt-2% left-2%'>
+     <section className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 w-9/12 relative mt-2% left-2%'>
       <section id='1'>
 
       <section className=' bg-white p-7.5% rounded-3xl w-10/12 ml-1% mt-8.2% row-span-3 space-y-18.35%'> 
       <img src='/img/target.png' className='p-1 my-4.2% scale-110'/>
-    <h2 className='text-3xl text-left font-bold '>Test your skill level as 
+    <h2 className='lg:text-3xl md:text-xl sm:text-lg text-left font-bold '>Test your skill level as 
 a Product Manager</h2>
-    <p className='mt-17% text-2xl pb-2%'>Fill this test now and as often 
+    <p className='mt-17% lg:text-2xl md:text-lg sm:text-base pb-2%'>Fill this test now and as often 
 as you see fit and see the 
 changes in time</p>
     <p className='text-center text-xl left-12% relative top-1 text-white w-9/12 bg-pink-600 p-5% rounded-full'><Link href='/survey/1' onClick={handleStart}>Start test</Link></p>

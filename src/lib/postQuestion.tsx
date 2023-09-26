@@ -1,12 +1,12 @@
 import axios from "axios";
 export default async function postQuestion(userid:string,survey:string,finalscore:number,value:any){
-    const ComURL='http://localhost:3500/communication/'
-    const discURL='http://localhost:3500/Disscovery'
-    const designURL='http://localhost:3500/Design'
-    const delivURL='http://localhost:3500/Delivery'
-    const stakeURL='http://localhost:3500/Stakeholder'
-    const visionURL='http://localhost:3500/Vision'
-    const knowlURL='http://localhost:3500/IndustryKnwlg'
+    const ComURL='https://produktize-api.onrender.com/communication/'
+    const discURL='https://produktize-api.onrender.com/Disscovery'
+    const designURL='https://produktize-api.onrender.com/Design'
+    const delivURL='https://produktize-api.onrender.com/Delivery'
+    const stakeURL='https://produktize-api.onrender.com/Stakeholder'
+    const visionURL='https://produktize-api.onrender.com/Vision'
+    const knowlURL='https://produktize-api.onrender.com/IndustryKnwlg'
     
     if(survey=='1'){
         axios.patch(ComURL,{

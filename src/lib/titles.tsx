@@ -45,26 +45,35 @@ export const titles2=[
     'Design thinking',
     'Market Research',
     'Synthesising findings',
+    
+]
+export const titles3=[
     'Product thinking',
     'Visual Design',
     'UX & Interaction design',
     'UX testing',
 ]
 
-export const titles3=[
+export const titles4=[
     'Business Process Management',
     'Product Development',
     'Technology Awareness',
     'Agile Product Delivery',
+    
+]
+export const titles5=[
     'Engagement',
     'Leadership',
     'Stakeholder Management',
 ]
 
-export const titles4=[
+export const titles6=[
     'Vision',
     'Road Mapping',
     'Strategy',
+    
+]
+export const titles7=[
     'General Industry knowledge',
     'Industry specific processes',
 ]
