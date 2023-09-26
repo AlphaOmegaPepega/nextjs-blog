@@ -21,7 +21,20 @@ export default function Skill() {
 
 const [page,SetPage]=useState(true)
   const {data: session, status}=useSession()
- 
+ let dataWorking
+ let deliv
+ let design
+ let discover
+ let industry
+ let stack 
+ let vision
+let chartData1
+let chartData2
+let chartData3
+let chartData4
+let chartData5
+let chartData6
+let chartData7
  useEffect(()=>{
   if(status=="authenticated")
   {
@@ -48,6 +61,7 @@ const [page,SetPage]=useState(true)
       }
   
     const creatGraph=async ()=>{
+      try{
       const user=await getAllUsers(session.user.email)
       const data=await getPersonal(user._id)
       const delivData=await getDelivery(user._id)
@@ -57,13 +71,13 @@ const [page,SetPage]=useState(true)
       const StackhData=await getStackholder(user._id)
       const VisionData=await getVision(user._id)
 
-      const dataWorking=await data[data.length-1];
-      const deliv=await delivData[delivData.length-1]
-      const design=await designData[designData.length-1]   
-      const discover=await discoverData[discoverData.length-1]
-      const industry=await industryData[industryData.length-1]      
-      const stack=await StackhData[StackhData.length-1];
-      const vision=await VisionData[VisionData.length-1];
+      dataWorking=await data[data.length-1];
+       deliv=await delivData[delivData.length-1]
+       design=await designData[designData.length-1]   
+       discover=await discoverData[discoverData.length-1]
+       industry=await industryData[industryData.length-1]      
+      stack=await StackhData[StackhData.length-1];
+      vision=await VisionData[VisionData.length-1];
       const promises = [
         ...Object.values(dataWorking),
         ...Object.values(deliv),
@@ -73,35 +87,51 @@ const [page,SetPage]=useState(true)
         ...Object.values(stack),
         ...Object.values(vision)
       ];
+
       const results = await Promise.all(promises);
+    
       results.forEach(data => {
         if (data === "") {
           SetPage(false);
         }
       });
-
+    }catch(error){
+      console.log(error)
+      SetPage(false);
+    }
 
 
       
-// Data for first part of the chart TODO:create env for it      
-const chartData1=[dataWorking.Collaboration,dataWorking.Communication,
+    
+if(dataWorking){
+chartData1=[dataWorking.Collaboration,dataWorking.Communication,
 dataWorking.Quality,dataWorking.DecisionMaking,dataWorking.Learning,dataWorking.Organisational,
 dataWorking.Bias]
-const chartData2=[discover.UserResearch,discover.Design,discover.Market,discover.Synthesising]
-// Colors for first part of the chart 
-const chartData3=[design.Product,design.Visual,design.UXDesign,design.UXTesting]
+}
+if(discover){
+chartData2=[discover.UserResearch,discover.Design,discover.Market,discover.Synthesising]
+}
+if(design){
+chartData3=[design.Product,design.Visual,design.UXDesign,design.UXTesting]
+}
+if(deliv){
+chartData4=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile]
+}
+if(stack){
 
-const chartData4=[deliv.Business,deliv.Product,deliv.Technology,deliv.Agile]
-const chartData5=[stack.Engagement,stack.Leadership,stack.Management]
 
-const chartData6=[vision.Vision,vision.Strategy,vision.RoadMapping]
-const chartData7=[industry.General,industry.Specific]
+chartData5=[stack.Engagement,stack.Leadership,stack.Management]
+}
+if(vision){
+chartData6=[vision.Vision,vision.Strategy,vision.RoadMapping]
+}
+if(industry){
+chartData7=[industry.General,industry.Specific]
+}
 
 
 
-// Data for second part of the chart TODO:create env for it
 
-// Colors for seconds part of the chart 
 
      
       

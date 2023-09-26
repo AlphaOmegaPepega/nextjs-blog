@@ -71,7 +71,7 @@ const handleStart=async ()=>{
 }
   return (
     <main>
-      <h1 className='text-white text-7xl w-2/5 mx-10 mt-16'> Welcome,</h1>
+      <h1 className='text-white text-7xl w-2/5 mx-10 mt-24'> Welcome,</h1>
       <h1 className='text-white text-7xl w-2/5 mx-10 mt-2'>{name}</h1>
      <section className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2 w-9/12 relative mt-2% left-2%'>
       <section id='1'>
