@@ -65,7 +65,7 @@ export default function Personal() {
         }
     },[status,select])
   return (
-    <main>
+    <main className='relative top-20'>
         <section className='flex bg-white p-2%'>
         <section className='bg-white  flex-none w-64 relative -top-7 py-2%' >
         
@@ -95,7 +95,7 @@ export default function Personal() {
          <p id='7' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Bias to Action</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel2')}>
+        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -110,7 +110,7 @@ export default function Personal() {
          <p id='11' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Synthesising findings</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel3')}>
+        <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -125,7 +125,7 @@ export default function Personal() {
          <p id='15' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>UX testing</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel5')}>
+        <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -140,7 +140,7 @@ export default function Personal() {
          <p id='19' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Agile Product Delivery</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel6')}>
+        <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -154,7 +154,7 @@ export default function Personal() {
          <p id='22' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Stakeholder Management</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel7')}>
+        <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -168,7 +168,7 @@ export default function Personal() {
          <p id='25' className='text-xl cursor-pointer hover:text-black/70' onClick={handleChoice}>Strategy</p>
         </AccordionDetails>
       </Accordion>
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel8')}>
+        <Accordion expanded={expanded === 'panel8'} onChange={handleChange('panel8')}>
         <AccordionSummary
          expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -186,9 +186,9 @@ export default function Personal() {
 
 
 </section>
-<section className='bg-white flex-1 ml-1% rounded-2xl'>
+<section className='bg-white flex-1 ml-1% rounded-2xl h-200'>
     
-    <canvas  id="acquisitions" ></canvas></section>
+    <canvas className='h-max'  id="acquisitions" ></canvas></section>
 </section>
 </main>
   )

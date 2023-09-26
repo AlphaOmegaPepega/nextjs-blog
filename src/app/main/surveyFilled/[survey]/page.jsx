@@ -1,7 +1,7 @@
 'use client'
 import React, { Suspense, useEffect,useRef,useState } from 'react'
 import { questions } from '@/lib/servey'
-
+import "./style.css"
 import { useRouter } from 'next/navigation'
 import { useSession } from "next-auth/react"
 import getAllUsers from '@/lib/getAllUsers'
@@ -77,7 +77,7 @@ const handleSurvey=()=>{
 
 
   return (
-    <main>
+    <main className='relative top-16'>
       <Suspense>
       {parseInt(survey)<17 &&   <h1 className='text-5xl text-white mt-10 text-center'>{titlesCom[parseInt(survey)]}</h1>}
       {parseInt(survey)>=16 &&   <h1 className='text-5xl text-white m-5 mb-0'>{titles2[parseInt(survey)-16]}</h1>}
