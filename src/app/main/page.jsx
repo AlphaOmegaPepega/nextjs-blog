@@ -24,8 +24,16 @@ const getData=async()=>{
   
 
   const userData=await getAllUsers(session?.user?.email)
-  
-  setIds(userData._id)
+  if(!userData){
+    axios.post(`https://produktize-api.onrender.com/users`,{
+      email:session?.user?.email,
+      date:currentDate
+    })
+  }else{
+    setIds(userData._id)
+  }
+ 
+
 }
 
 
@@ -50,7 +58,7 @@ const handleStart=()=>{
   
   const endpoints = ['communication', 'Delivery', 'Design', 'Disscovery', 'IndustryKnwlg', 'Stakeholder', 'Vision'];
   const postData = async (endpoint) => {
-    return axios.post(`http://localhost:3500/${endpoint}`,{
+    return axios.post(`https://produktize-api.onrender.com/${endpoint}`,{
       user:ids,
       date:currentDate
     });
