@@ -7,7 +7,7 @@ export default function NavBar() {
     
     const {data: session, status}=useSession()
   return (
-   <nav className="bg-produkt p-4 fixed w-full top-0 mb-7 drop-shadow-lg z-10">
+   <nav className="bg-produkt p-4 sticky w-full top-0 mb-7 drop-shadow-lg z-10">
     <div className="prose prose=xl mx-auto flex justify-between flex-col sm:flex-row">
         <h1 className="text-3xl font-bold text-white grid place-content-center mb-2 md:mb-0">
          <Link href='/' className="text-yellow-200/90 no-underline hover:text-yellow-200">produktize</Link>

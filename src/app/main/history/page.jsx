@@ -28,7 +28,7 @@ export default function Personal() {
     }
 
 
-    const handleChange = (panel) => (isExpanded) => {
+    const handleChange = (panel) => (event,isExpanded) => {
       setExpanded(isExpanded ? panel : false);
     };
 
