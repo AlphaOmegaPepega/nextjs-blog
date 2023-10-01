@@ -67,69 +67,68 @@ const handleStart=()=>{
 
 }
   return (
-    <main>
-      <h1 className='text-white text-7xl w-2/5 mx-20 mt-20 '> Welcome,</h1>
-      <h1 className='text-white text-7xl w-2/5 mx-20 mt-2'>{name}</h1>
+    <main className=''>
+      <h1 className='text-white lg:text-title w-2/5 mx-24 mt-12'> Welcome</h1>
+      <h1 className='text-white lg:text-title w-2/5 mx-24 relative bottom-7'>{name}</h1>
 
 
-     <section className='relative lg:grid lg:grid-cols-4 w-8/12 lg:mx-20 md:mx-2 my-20 sm:justify-center '>
+     <section className='relative lg:grid lg:grid-cols-6 mt-16 left-24'>
 
 
-      <section className='lg:col-span-2 mb-6.5'>
-      <section className='w-80 lg:h-100 sm:h-96 relative  bg-white  p-8 rounded-lg '> 
-      <img src='/img/target.png' className='p-1 my-3.5'/>
-    <h2 className='text-2xl text-left my-5 font-bold '>Test your skill level as 
-a Product Manager</h2>
-    <p className='mt-14 lg:text-lg md:text-base'>Fill this test now and as often 
-as you see fit and see the 
-changes in time</p>
-<Link href='/survey/1' onClick={handleStart}><h3 className='text-white bg-pink-600 text-xl  text-center py-5 rounded-full mt-14'>Start test</h3></Link>
+    
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72'> 
+      <img src='/img/target.png' className='relative ml-18 bottom-2'/>
+    <h2 className=' font-bold text-center text-3xl p-3 '>Test your skill</h2>
+   
+<Link href='/survey/1' onClick={handleStart}><h3 className='text-white bg-pink-600 text-xl  text-center py-4 rounded-full mt-4'>Start test</h3></Link>
       </section>
-      </section>
-
-
-
-
-
-
-
-
-      <section className='relative lg:right-72 '>
-      <section className='relative bg-white rounded-lg  w-64 p-8 h-56 '> 
-      <img src='/img/plus.png' className=' ml-18'/>
       
-      <h2 className=' font-bold text-center text-3xl p-3 '>Add Learnings</h2>
-      <p className='relative text-center text-pink-600 font-bold text-lg top-3'><Link href='/main/add/1' >View</Link></p>
-      </section>
 
-      <section className=' bg-white rounded-lg  w-64 p-8 h-56 my-6.5 '> 
-      <img src='/img/profile.png' className=' ml-18'/>
+
+
+
+
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72'> 
+      <img src='/img/plus.png' className='relative ml-18 bottom-2'/>
       
-      <h2 className='font-bold text-center text-3xl p-3 pt-8 '>Profile</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-7'><Link href='/main/profile' >View</Link></p>
-      </section>
-      </section>
-
-
-
-
-
-      <section className='relative lg:right-80 '>
-      <section className=' bg-white rounded-lg  w-64 p-8 h-56'> 
-      <img src='/img/plus.png' className=' ml-18'/>
-      
-      <h2 className='font-bold text-center text-3xl p-3 pt-8'>Your skill</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-7'><Link href='/main/skillLevel' >View</Link></p>
+      <h2 className='font-bold text-center text-3xl p-3 pt-6'>View skill report</h2>
+      <p className='relative text-center text-pink-600 font-bold mt-5'><Link href='/main/skillLevel' >View</Link></p>
             </section>
 
-      <section className=' bg-white rounded-lg  w-64 p-8 h-56 my-6.5 '> 
-      <img src='/img/profile.png' className=' ml-18'/>
+
       
-      <h2 className='font-bold text-center text-3xl p-3 pt-8'>Test history</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-7'><Link href='/main/history' >View</Link></p>
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72'> 
+      <img src='/img/plus.png' className='relative ml-18 bottom-2'/>
+      
+      <h2 className='font-bold text-center text-3xl p-3 pt-5'>Add Learnings</h2>
+      <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/add/1' >View</Link></p>
+      </section>
+
+    
+     
+
+
+
+
+
+   
+     
+
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72'> 
+      <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
+      
+      <h2 className='font-bold text-center text-3xl p-3 pt-5'>View test history</h2>
+      <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/history' >View</Link></p>
+      </section>
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72'> 
+      <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
+      
+      <h2 className='font-bold text-center text-3xl p-3 pt-10 '>Profile</h2>
+      <p className='relative text-center text-pink-600 font-bold mt-10'><Link href='/main/profile' >View</Link></p>
       </section>
       </section>
-      </section>
+      
+
     </main>
   )
 }

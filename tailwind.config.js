@@ -8,6 +8,11 @@ module.exports = {
   theme: {
    
     extend: {
+      fontSize: {
+        'title':['7rem',{
+         
+        }]
+      },
 
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

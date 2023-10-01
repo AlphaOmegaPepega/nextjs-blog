@@ -91,7 +91,7 @@ const handleSurvey=()=>{
 let score=value.current.reduce((a,b)=>{return parseInt(a)+parseInt(b)})
 console.log(score)
 
-let finalscore=Math.round(score*100/(content.length*4))
+let finalscore=Math.round(score*100/(content.length*5))
 
 console.log(finalscore)
 console.log(value)
@@ -135,8 +135,9 @@ router.push(`/survey/${parseInt(survey)+1}`)
         name="radio-buttons-group"
        
       >
-        <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
-        <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'6'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
+        <FormControlLabel className='ml-8 p-6 '  value="0" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="No experience" />
+        <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'6'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
+        <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'7'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
         <FormControlLabel  className='ml-8 p-6' value="3" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
         <FormControlLabel className='ml-8 p-6'  value="4" control={<Radio onChange={handleChange} id={id+'9'} className={color[id-1]==5? "text-sky-600" :""}  />} label="Strongly Agree" />
       </RadioGroup>

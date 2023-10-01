@@ -268,6 +268,7 @@ router.push(`/survey/${parseInt(survey)+1}`)
         name="radio-buttons-group"
        
       >
+        <FormControlLabel className='ml-8 p-6 '  value="0" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="No Experience" />
         <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
         <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'6'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
         <FormControlLabel  className='ml-8 p-6' value="3" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
@@ -281,7 +282,7 @@ router.push(`/survey/${parseInt(survey)+1}`)
     })
     
     }
-    <p className='bg-cyan-500 p-5 w-40 mt-1% ml-2% rounded-3xl text-center cursor-pointer' onClick={handleSurvey}>Next</p>
+    <p className='bg-cyan-500 p-5 w-40 mt-12 ml-2% rounded-full text-center cursor-pointer' onClick={handleSurvey}>Next</p>
     
     </div>
     </section>
