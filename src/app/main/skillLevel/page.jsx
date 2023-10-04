@@ -138,13 +138,13 @@ chartData7=[industry.General,industry.Specific]
       
       
         if(page){
-        createChart('bar',titles1,chartData1,'#49BBFF','acquisitions','y')
-        createChart('bar',titles2,chartData2,'#FF508C','acquisitions2','y') 
-        createChart('bar',titles3,chartData3,'#6500D3','acquisitions3','y')  
-        createChart('bar',titles4,chartData4,'#F4D801','acquisitions4','y')
-        createChart('bar',titles5,chartData5,'#00268B','acquisitions5','y') 
-        createChart('bar',titles6,chartData6,'#FFD79A','acquisitions6','y')  
-        createChart('bar',titles7,chartData7,'#E7DCF8','acquisitions7','y')
+        createChart('bar',titles1,chartData1,'#49BBFF99','acquisitions','y')
+        createChart('bar',titles2,chartData2,'#FF508C99','acquisitions2','y') 
+        createChart('bar',titles3,chartData3,'#6500D399','acquisitions3','y')  
+        createChart('bar',titles4,chartData4,'#F4D80199','acquisitions4','y')
+        createChart('bar',titles5,chartData5,'#00268B99','acquisitions5','y') 
+        createChart('bar',titles6,chartData6,'#FFD79A99','acquisitions6','y')  
+        createChart('bar',titles7,chartData7,'#E7DCF899','acquisitions7','y')
         
 
 
@@ -162,66 +162,68 @@ chartData7=[industry.General,industry.Specific]
 
 
   return (
-    <main>
+    <main className='h-full'>
 
 
-{page && <div>
-  <h1>Your skill</h1>
+{page && <div className=' w-full'>
+  <h1 >Your skill</h1>
 <h3>HELLO BLA BLA BLA</h3>
+<section className='bg-white'>
 <section className='h-145'>
 <section className='text-center relative top-10 py-4 text-3xl bg-white'>
-  <h1 className>PERSONAL TRAITS</h1>
+  <h1 className='bg-white'>PERSONAL TRAITS</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-145'> 
+  <section className='text-center  text-3xl   bg-white h-145 pl-1.5 pb-14'> 
   <canvas  className='relative bg-white top-10  ' id="acquisitions" ></canvas>
   </section>
 
-  <section className='text-center relative top-10 py-4 text-3xl bg-white'>
-  <h1 className>DISCOVERY AND IDEATION</h1>
+  <section className='text-center relative  text-3xl bg-white'>
+  <h1 >DISCOVERY AND IDEATION</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-96'> 
+  <section className='text-center  text-3xl   bg-white h-96 pl-15 pb-14'> 
 <canvas className='relative bg-white top-10 ' id="acquisitions2" ></canvas>
 </section>
 
-<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+<section className='text-center relative text-3xl bg-white z-50'>
   <h1 className>DESIGN</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-96'> 
-  <canvas  className='relative bg-white top-10  ' id="acquisitions3" ></canvas>
+  <section className='relative text-3xl   bg-white h-96 pl-11 pb-14'> 
+  <canvas  className='relative  top-10  ' id="acquisitions3" ></canvas>
   </section>
 
-  <section className='text-center relative top-10 py-4 text-3xl bg-white'>
+  <section className='text-center relative text-3xl bg-white'>
   <h1 className>DELIVERY</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-96'> 
+  <section className='text-3xl   bg-white h-96 pb-14'> 
 <canvas className='relative bg-white top-10 ' id="acquisitions4" ></canvas>
 </section>
 
-<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+<section className='text-center relative text-3xl bg-white'>
   <h1 className>STAKEHOLDER MANAGEMENT</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-80'> 
+  <section className='text-center  text-3xl   bg-white h-80 pb-14 pl-6.5'> 
 <canvas className='relative bg-white top-10 ' id="acquisitions5" ></canvas>
 </section>
 
-<section className='text-center relative top-10 py-4 text-3xl bg-white'>
+<section className='text-center relative text-3xl bg-white'>
   <h1 className>VISION AND STRATEGY</h1>
   </section>
-  <section className='text-center  text-3xl   bg-white h-80'> 
+  <section className='text-center  text-3xl   bg-white h-80 pb-14 pl-21'> 
 
   <canvas  className='relative bg-white top-10  ' id="acquisitions6" ></canvas>
  </section>
 
 
- <section className='text-center relative top-10 py-4 text-3xl bg-white'>
+ <section className='text-center relative text-3xl bg-white'>
   <h1 className>BUSINESS INDUSTRY KNOWLEDGEY</h1>
   </section>
-  <section className='text-center  text-3xl  bg-white h-64'> 
+  <section className='text-center  text-3xl  bg-white h-64 pb-18 pl-2.5'> 
 <canvas className='relative bg-white top-10 ' id="acquisitions7" ></canvas>
 </section>
 
 
 
+</section>
 </section>
 </div>
 

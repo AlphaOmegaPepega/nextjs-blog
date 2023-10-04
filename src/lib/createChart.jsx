@@ -35,6 +35,17 @@ new Chart(
            
               suggestedMin: 0,
               suggestedMax: 100,
+              grid:{
+                color:(context)=>{
+                  if(context.tick.value=== 70){
+                    return "#6500D3"
+                  }
+                  if(context.tick.value=== 30){
+                    return "#FF3C00"
+                  }
+                },
+                lineWidth:2,
+              },
           },
         
         },
