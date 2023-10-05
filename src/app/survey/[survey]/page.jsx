@@ -95,7 +95,9 @@ let finalscore=Math.round(score*100/(content.length*5))
 
 console.log(finalscore)
 console.log(value)
-
+if(finalscore=="0"){
+  finalscore="1"
+}
 postQuestion(ids,survey,finalscore,value.current)
 if(value.current.length==content.length && parseInt(survey)<27){
 router.push(`/survey/${parseInt(survey)+1}`)
@@ -135,7 +137,7 @@ router.push(`/survey/${parseInt(survey)+1}`)
         name="radio-buttons-group"
        
       >
-        <FormControlLabel className='ml-8 p-6 '  value="0" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==1? "text-sky-600" :""}/>} label="No experience" />
+        <FormControlLabel className='ml-8 p-6 '  value="0" control={<Radio onChange={handleChange}  id={id+'5'} className={color[id-1]==0? "text-sky-600" :""}/>} label="No experience" />
         <FormControlLabel className='ml-8 p-6 '  value="1" control={<Radio onChange={handleChange}  id={id+'6'} className={color[id-1]==1? "text-sky-600" :""}/>} label="Strongly Disagree" />
         <FormControlLabel className='ml-8 p-6'  value="2" control={<Radio onChange={handleChange}  id={id+'7'}className={color[id-1]==2? "text-sky-600" :""}  />} label="Disagree" />
         <FormControlLabel  className='ml-8 p-6' value="3" control={<Radio onChange={handleChange} id={id+'8'} className={color[id-1]==4? "text-sky-600" :""} />} label="Agree" />
