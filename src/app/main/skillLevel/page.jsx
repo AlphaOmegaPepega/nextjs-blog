@@ -44,7 +44,7 @@ export default function Skill() {
   const [StackholderNotes, setStackholderNotes] = useState(['notes']);
   const [VisionNotes, setVisionNotes] = useState(['notes']);
   const [IndustryKnwlgNotes, setIndustryKnwlgNotes] = useState(['notes']);
-  const [notes, setNotes] = useState(['notes']);
+  const [notes, setNotes] = useState(['Your notes will be here']);
 
   const handleClose = () => setOpen(false);
   const [page, SetPage] = useState(true);
