@@ -190,11 +190,15 @@ export default function Skill() {
   }, [status, page]);
 
   const handlePersonal = () => {
+    if(PersonalNotes){
     setNotes(PersonalNotes);
+    }
     setOpen(true);
   };
   const handleDiscovery = () => {
+    if(DiscoveryNotes){
     setNotes(DiscoveryNotes);
+    }
     setOpen(true);
   };
 
