@@ -41,9 +41,7 @@ getData()
 
 
 
-const handleNotes=()=>{
 
-}
 
 
 
@@ -74,7 +72,6 @@ const handleNotes=()=>{
     
       </section>
       <section className='relative pl-36% bg-white text-center p-1% text-2xl h-80'>
-      <Link href='profile/notes'><p className='p-1% bg-pink-600 rounded-full  mx-1% cursor-pointer absolute bottom-4 left-3 text-white '>Notes</p></Link>
       <p className='p-1% bg-pink-800 rounded-full text-lg  mx-1% cursor-pointer absolute bottom-4 right-3 text-white ' onClick={handleDelete}>Delete account</p>
       </section>
     </main>
