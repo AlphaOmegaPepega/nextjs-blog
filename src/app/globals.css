@@ -98,3 +98,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+pre{
+white-space: pre-line;
+font-family: Poppins;
+font-weight: 400;
+overflow-wrap: break-word;
+
+}

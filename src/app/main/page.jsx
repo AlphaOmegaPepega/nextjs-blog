@@ -62,9 +62,12 @@ const handleStart=()=>{
       user:ids,
       date:currentDate
     });
+
   }
   Promise.all(endpoints.map(endpoint => postData(endpoint)));
-
+  axios.post(`https://produktize-api.onrender.com/notes`,{
+    user:ids
+  })
 }
   return (
     <main className='w-full'>
