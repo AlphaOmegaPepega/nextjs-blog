@@ -5,7 +5,7 @@ import Link from 'next/link'
 import getAllUsers from '@/lib/getAllUsers'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
-
+import { useRouter } from 'next/navigation'
 export default function Main() {
   
   const date = new Date();
@@ -16,6 +16,7 @@ let month = date.getMonth() + 1;
 let year = date.getFullYear();
 const [name,setName]=useState('User')
 const currentDate = `${day}-${month}-${year}`;
+const router = useRouter()
 useEffect(()=>{
   
 const getData=async()=>{
@@ -29,6 +30,7 @@ const getData=async()=>{
       email:session?.user?.email,
       date:currentDate
     })
+router.push('/main/profile')
   }else{
     setIds(userData._id)
   }
