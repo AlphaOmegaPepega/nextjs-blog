@@ -97,7 +97,7 @@ const handleSurvey=()=>{
 let score=value.current.reduce((a,b)=>{return parseInt(a)+parseInt(b)})
 console.log(score)
 
-let finalscore=Math.round(score*100/(content.length*5))
+let finalscore=Math.round(score*100/(content.length*4))
 
 console.log(finalscore+" before")
 console.log(value)

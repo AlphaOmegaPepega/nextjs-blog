@@ -73,11 +73,11 @@ const handleStart=()=>{
 }
   return (
     <main className='w-full'>
-      <h1 className='text-white text-title  w-2/5 mx-35 mt-12'> Welcome,</h1>
-      <h1 className='text-white text-title w-2/5 mx-35 relative bottom-7'>{name}</h1>
+      <h1 className='text-white text-title  2xl:w-2/5 2xl:mx-35 2xl:mt-12 xl:mx-24 xl:mt-12'> Welcome,</h1>
+      <h1 className='text-white text-title 2xl:w-2/5 2xl:mx-35 2xl:relative 2xl:bottom-7 xl:mx-24'>{name}</h1>
 
-<section className='ml-36'>
-     <section className='relative lg:grid lg:grid-cols-6 mt-16 gap-56'>
+<section className='2xl:ml-36 xl:ml-24 lg:ml-10'>
+     <section className='relative grid 2xl:grid-cols-6 2xl:mt-16 xl:mt-12 gap-64 xl:gap-5 lg:grid-cols-3 lg:gap-28'>
 
 
     
@@ -106,7 +106,7 @@ const handleStart=()=>{
       <img src='/img/plus.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-5'>Add Learnings</h2>
-      <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/add/1' >View</Link></p>
+      <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/add/0' >View</Link></p>
       </section>
 
     
@@ -119,13 +119,13 @@ const handleStart=()=>{
    
      
 
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2'> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 2xl:ml-0 xl:ml-52'> 
       <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-5'>View test history</h2>
       <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/history' >View</Link></p>
       </section>
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2'> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 2xl:ml-0 xl:ml-52 '> 
       <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-10 '>Profile</h2>

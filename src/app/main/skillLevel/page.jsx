@@ -201,6 +201,36 @@ export default function Skill() {
     }
     setOpen(true);
   };
+  const handleDesign = () => {
+    if(DesignNotes){
+    setNotes(DesignNotes);
+    }
+    setOpen(true);
+  };
+  const handleDelivery = () => {
+    if(DeliveryNotes){
+    setNotes(DeliveryNotes);
+    }
+    setOpen(true);
+  };
+  const handleStackehold = () => {
+    if(StackholderNotes){
+    setNotes(StackholderNotes);
+    }
+    setOpen(true);
+  };
+  const handleVision = () => {
+    if(VisionNotes){
+    setNotes(VisionNotes);
+    }
+    setOpen(true);
+  };
+  const handleKnowledge = () => {
+    if(IndustryKnwlgNotes){
+    setNotes(IndustryKnwlgNotes);
+    }
+    setOpen(true);
+  };
 
   const destroyChart = (chartId) => {
     const chart = Chart.getChart(chartId);
@@ -234,35 +264,35 @@ export default function Skill() {
               </section>
 
               <section className='text-center relative text-3xl bg-white z-50'>
-                <h1 className>DESIGN</h1>
+                <h1 className>DESIGN <AddchartOutlinedIcon onClick={handleDesign}/>  </h1>
               </section>
               <section className='relative text-3xl   bg-white h-96 pl-11 pb-14'>
                 <canvas className='relative top-10' id='acquisitions3'></canvas>
               </section>
 
               <section className='text-center relative text-3xl bg-white'>
-                <h1>DELIVERY</h1>
+                <h1>DELIVERY <AddchartOutlinedIcon onClick={handleDelivery}/></h1>
               </section>
               <section className='text-3xl   bg-white h-96 pb-14'>
                 <canvas className='relative bg-white top-10 ' id='acquisitions4'></canvas>
               </section>
 
               <section className='text-center relative text-3xl bg-white'>
-                <h1>STAKEHOLDER MANAGEMENT</h1>
+                <h1>STAKEHOLDER MANAGEMENT <AddchartOutlinedIcon onClick={handleStackehold}/></h1>
               </section>
               <section className='text-center  text-3xl   bg-white h-80 pb-14 pl-6.5'>
                 <canvas className='relative bg-white top-10 ' id='acquisitions5'></canvas>
               </section>
 
               <section className='text-center relative text-3xl bg-white'>
-                <h1>VISION AND STRATEGY</h1>
+                <h1>VISION AND STRATEGY <AddchartOutlinedIcon onClick={handleVision}/></h1>
               </section>
               <section className='text-center  text-3xl   bg-white h-80 pb-14 pl-21'>
                 <canvas className='relative bg-white top-10  ' id='acquisitions6'></canvas>
               </section>
 
               <section className='text-center relative text-3xl bg-white'>
-                <h1>BUSINESS INDUSTRY KNOWLEDGEY</h1>
+                <h1>BUSINESS INDUSTRY KNOWLEDGE<AddchartOutlinedIcon onClick={handleKnowledge}/></h1>
               </section>
               <section className='text-center  text-3xl  bg-white h-64 pb-18 pl-2.5'>
                 <canvas className='relative bg-white top-10 ' id='acquisitions7'></canvas>
