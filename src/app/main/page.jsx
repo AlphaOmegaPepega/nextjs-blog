@@ -73,11 +73,13 @@ const handleStart=()=>{
 }
   return (
     <main className='w-full'>
-      <h1 className='text-white text-title  2xl:w-2/5 2xl:mx-35 2xl:mt-12 xl:mx-24 xl:mt-12'> Welcome,</h1>
-      <h1 className='text-white text-title 2xl:w-2/5 2xl:mx-35 2xl:relative 2xl:bottom-7 xl:mx-24'>{name}</h1>
-
-<section className='2xl:ml-36 xl:ml-24 lg:ml-10'>
-     <section className='relative grid 2xl:grid-cols-6 2xl:mt-16 xl:mt-12 gap-64 xl:gap-5 lg:grid-cols-3 lg:gap-28'>
+   <section className='2xl:ml-10 2xl:mt-20 1.5xl:mt-0 lg:ml-10 2xl:text-left 1.5xl:text-center xl:text-center lg:text-center md:text-center sm:text-center mob:text-center'>
+      <h1 className='text-white 2xl:text-title 1.5xl:text-title xl:text-8xl lg:text-8xl md:text-6xl sm:text-5xl mob:text-4xl'> Welcome,</h1>   
+      
+      <h1 className='text-white relative 2xl:text-title 2xl:bottom-0 1.5xl:text-title 1.5xl:top-1  xl:text-8xl lg:text-8xl lg:bottom-0 md:text-6xl sm:text-5xl mob:text-4xl'>{name}</h1>
+      </section>
+<section className='relative px-8 2xl:mt-18 lg:py-8 lg:px-10 2xl:ml-0 1.5xl:ml-32 xl:ml-32 lg:ml-8 lg:mr-10 md:mt-10 md:ml-10 md:mr-10 sm:mt-5 mob:px-4 mob:mt-3'>
+     <section className='relative grid 2xl:grid-cols-6 2xl:gap-50 xl:grid-cols-3 xl:gap-5 1.5xl:grid-cols-3 lg:grid-cols-3 lg:gap-5 md:grid-cols-2 md:gap-10 sm:grid-cols-2 sm:gap-6 mob:grid-cols-1 mob:gap-6'>
 
 
     
@@ -93,7 +95,7 @@ const handleStart=()=>{
 
 
 
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2'> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 '> 
       <img src='/img/plus.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-6'>View skill report</h2>
@@ -102,7 +104,7 @@ const handleStart=()=>{
 
 
       
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2'> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 '> 
       <img src='/img/plus.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-5'>Add Learnings</h2>
@@ -119,17 +121,23 @@ const handleStart=()=>{
    
      
 
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 2xl:ml-0 xl:ml-52'> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2  '> 
       <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-5'>View test history</h2>
       <p className='relative text-center text-pink-600 font-bold mt-6'><Link href='/main/history' >View</Link></p>
       </section>
-      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 2xl:ml-0 xl:ml-52 '> 
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2  '> 
       <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-10 '>Profile</h2>
       <p className='relative text-center text-pink-600 font-bold mt-10'><Link href='/main/profile' >View</Link></p>
+      </section>
+      <section className='relative bg-white rounded-lg  w-72 p-12 h-72 mb-2 '> 
+      <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
+      
+      <h2 className='font-bold text-center text-3xl p-3 pt-10 '>Feedback</h2>
+      <Link href='/survey/1' onClick={handleStart}><h3 className='text-white bg-pink-600 text-xl  text-center py-4 rounded-full mt-4'>Submit</h3></Link>
       </section>
       </section>
       </section>

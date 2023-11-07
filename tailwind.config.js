@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
    
+    
     extend: {
       fontSize: {
         'title':['7rem',{
          
         }]
+      },
+      screens: {
+        '1.5xl': '1600px',
+        '2xl':'1800px',
+        'mob':'300px'
       },
 
       backgroundImage: {
