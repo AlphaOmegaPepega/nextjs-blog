@@ -78,7 +78,7 @@ const handleStart=()=>{
       
       <h1 className='text-white relative 2xl:text-title 2xl:bottom-0 1.5xl:text-title 1.5xl:top-1  xl:text-8xl lg:text-8xl lg:bottom-0 md:text-6xl sm:text-5xl mob:text-4xl'>{name}</h1>
       </section>
-<section className='relative px-8 2xl:mt-18 lg:py-8 lg:px-10 2xl:ml-0 1.5xl:ml-32 xl:ml-32 lg:ml-8 lg:mr-10 md:mt-10 md:ml-10 md:mr-10 sm:mt-5 mob:px-4 mob:mt-3'>
+<section className='relative px-8 2xl:mt-18 lg:py-8 lg:px-10 2xl:ml-0 1.5xl:ml-32 xl:ml-32 lg:ml-8 lg:mr-10 md:mt-10 md:ml-10 md:mr-10 sm:mt-5 mob:ml-6% mob:mt-3'>
      <section className='relative grid 2xl:grid-cols-6 2xl:gap-50 xl:grid-cols-3 xl:gap-5 1.5xl:grid-cols-3 lg:grid-cols-3 lg:gap-5 md:grid-cols-2 md:gap-10 sm:grid-cols-2 sm:gap-6 mob:grid-cols-1 mob:gap-6'>
 
 
