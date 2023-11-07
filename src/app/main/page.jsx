@@ -137,7 +137,7 @@ const handleStart=()=>{
       <img src='/img/profile.png' className='relative ml-18 bottom-2'/>
       
       <h2 className='font-bold text-center text-3xl p-3 pt-10 '>Feedback</h2>
-      <Link href='/survey/1' onClick={handleStart}><h3 className='text-white bg-pink-600 text-xl  text-center py-4 rounded-full mt-4'>Submit</h3></Link>
+      <Link href='/main/feeedback'><h3 className='text-white bg-pink-600 text-xl  text-center py-4 rounded-full mt-4'>Submit</h3></Link>
       </section>
       </section>
       </section>
